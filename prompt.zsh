@@ -46,7 +46,7 @@ repo_prompt="$(create_repo_prompt)"
 #PROMPT='[${remote} %F{magenta}%B$(get_pwd)%b%f ] $(create_repo_prompt)
 # %F{cyan}%#%f ;
 
-PROMPT='[$(get_remote) %F{magenta}%B$(get_pwd)%b%f ] $(create_repo_prompt)
- %(?.%F{cyan}-%f.%F{red}●%f)%F{cyan}%#%f '
+PROMPT='┏[$(get_remote) %F{magenta}%B$(get_pwd)%b%f ] $(create_repo_prompt)
+┗%(?.%F{cyan}-%f.%F{red}●%f)%F{cyan}%#%f '
 
 setopt promptsubst
