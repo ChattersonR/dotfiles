@@ -12,7 +12,7 @@ function hg_prompt_info_nocolor {
 }
 
 function git_prompt_simple {
-    git symbolic-ref --short HEAD 2> /dev/null
+    git symbolic-ref --short HEAD 2> /dev/null || git rev-parse --short HEAD 2> /dev/null
 }
 
 function create_repo_prompt {
