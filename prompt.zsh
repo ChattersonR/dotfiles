@@ -2,8 +2,16 @@
 
 # <user@host if ssh>:<pwd> <git branch if git repo> %\n
 
+function get_git_symbol_color {
+    if [[ -z $(git status --porcelain) ]]; then
+        echo '%F{green}' && return
+    else
+        echo '%F{red}' && return
+    fi
+}
+
 function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
+    git branch >/dev/null 2>/dev/null && echo "$(get_git_symbol_color)±%f" && return
     hg root >/dev/null 2>/dev/null && echo '☿' && return
 }
 
