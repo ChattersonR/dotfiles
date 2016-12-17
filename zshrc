@@ -27,4 +27,4 @@ autoload -U colors && colors
 
 source ~/dotfiles/alias
 
-source prompt.zsh
+source ~/dotfiles/prompt.zsh

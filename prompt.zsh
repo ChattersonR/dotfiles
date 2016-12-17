@@ -27,7 +27,13 @@ function create_repo_prompt {
     repo_char="$(prompt_char)"
     hg_prompt="$(hg_prompt_info_nocolor)"
     git_prompt="$(git_prompt_simple)"
-    echo "${repo_char} <${hg_prompt}${git_prompt}>"
+
+    repo_prompt="${hg_prompt}${git_prompt}"
+    if [ -n "${repo_prompt}" ]; then
+        repo_prompt="<${repo_prompt}>"
+    fi
+
+    echo "${repo_char} ${repo_prompt}"
 }
 
 function get_pwd() {
