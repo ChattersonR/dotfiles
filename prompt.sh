@@ -4,9 +4,9 @@
 
 function get_git_symbol_color {
     if [[ -z $(git status --porcelain) ]]; then
-        echo '\e[0;32m' && return
+        echo '\[\e[0;32m\]' && return
     else
-        echo '\e[0;31m' && return
+        echo '\[\e[0;31m\]' && return
     fi
 }
 
@@ -43,19 +43,17 @@ function get_pwd() {
 
 function get_remote() {
     if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-        remote="\e[0;33m\u@\H\e[m"
+        remote="\[\e[0;33m\]\u@\H\[\e[m\]"
     fi
 }
 
 function exitstatus() {
-    if [[ $? == 0 ]]; then
-        echo '\e[1;36m-\e[m'
-    else
-        echo '\e[1;31m●\e[m'
+    if [[ $? -gt 0 ]]; then
+        echo '\[\e[1;31m\]●\[\e[m\]'
     fi
 }
 working_dir="$(get_pwd)"
 repo_prompt="$(create_repo_prompt)"
 
-PS1='┏[$(get_remote) \e[1;35m$(get_pwd)\e[m ] $(create_repo_prompt)
-┗${exitstatus}\e[0;36m%#\e[m '
+PS1='┏[$(get_remote) \[\e[1;35m\]$(get_pwd)\[\e[m\] ] $(create_repo_prompt)
+┗${exitstatus}\[\e[0;36m\]#\[\e[m\] '
