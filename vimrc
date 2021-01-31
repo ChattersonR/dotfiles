@@ -1,5 +1,8 @@
 set nocompatible " Not compatible with plain vi
 
+syntax on
+color industry
+set t_vb=
 set autoindent
 set copyindent
 set tabstop=4
