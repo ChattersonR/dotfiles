@@ -31,4 +31,8 @@ autoload -U colors && colors
 #source /usr/share/doc/git-1.8.3.1/contrib/completion/git-completion.bash
 source ~/dotfiles/alias
 
-source ~/dotfiles/prompt.zsh
+if [[ $(command -v starship) != "" ]] ; then
+    eval $(starship init bash)
+else
+    source ~/dotfiles/prompt.zsh
+fi

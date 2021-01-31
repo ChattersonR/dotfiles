@@ -2,8 +2,12 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-source /usr/share/doc/git-1.8.3.1/contrib/completion/git-completion.bash
+[ -f /usr/share/doc/git/contrib/completion/git-completion.bash ] && source /usr/share/doc/git/contrib/completion/git-completion.bash
 source ~/dotfiles/alias
 
-source ~/dotfiles/prompt.sh
+if [[ $(command -v starship) != "" ]] ; then
+    eval $(starship init bash)
+else
+    source ~/dotfiles/prompt.sh
+fi
 
