@@ -1,6 +1,14 @@
-alias ls='ls --color=auto'
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='nano -w PKGBUILD'
+alias more=less
 alias i3lock='i3lock -c 000000'
+alias ls='ls --color=auto'
 alias la='ls -a'
 alias ll='ls -la'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
 alias gp='grep -rnI'
 alias gpi='grep -rnIi'
