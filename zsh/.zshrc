@@ -29,10 +29,10 @@ autoload -U colors && colors
 # End of lines added by compinstall
 
 #source /usr/share/doc/git-1.8.3.1/contrib/completion/git-completion.bash
-source ~/dotfiles/alias
+source ${HOME}/.alias
 
 if [[ $(command -v starship) != "" ]] ; then
     eval $(starship init bash)
 else
-    source ~/dotfiles/prompt.zsh
+    source ${HOME}/.prompt.zsh
 fi

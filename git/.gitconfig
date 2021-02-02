@@ -1,0 +1,33 @@
+[user]
+	name = badgerrc@gmail.com
+	email = robertchatterson1@gmail.com
+[credential]
+	helper = cache
+[push]
+	default = simple
+[pull]
+	ff = only
+[merge]
+	tool = kdiff3
+[diff]
+	guitool = kdiff3
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(cyan)<%an>%Creset'
+	co = checkout
+	br = branch
+	st = status
+	sf = submodule foreach
+	sp = submodule foreach 'git pull --prune || :'
+	ru = remote update -p
+	ptag = push --tags
+	type = cat-file -t
+	dump = cat-file -p
+	alias = config --get-regexp alias
+	sha = rev-parse HEAD
+	prstash = "!f() { git fetch $1 refs/pull-requests/$2/from:$3; }; f" # remote prNum branch
