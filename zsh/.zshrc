@@ -1,3 +1,8 @@
+#Trying out fish
+if [[ ! -o login && $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]; then
+    exec fish
+fi
+
 zstyle ':completion:*' auto-description 'Specify: %d'
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' insert-unambiguous true

@@ -1,5 +1,5 @@
 export PATH=${HOME}/bin:${HOME}/.local/bin:$PATH
-if [[ -d "${HOME}/.gem} ]]; then
+if [[ -d "${HOME}/.gem" ]]; then
     export PATH=${PATH}:${HOME}/.gem/ruby/2.4.0/bin
 fi
 if [[ $(command -v yarn) != "" ]]; then
