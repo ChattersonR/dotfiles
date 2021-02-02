@@ -1,0 +1,7 @@
+[Unit]
+Description=Run the borg backup script.
+
+[Service]
+Type=oneshot
+User=badger
+ExecStart=/home/badger/bin/borg-backup.sh

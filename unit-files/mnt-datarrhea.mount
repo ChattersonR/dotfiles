@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount candyman datarrhea samba share at boot.
+After=network.target
+
+[Mount]
+What=//192.168.1.157/datarrhea
+Where=/mnt/datarrhea
+Options=_netdev,uid=1000,gid=1000,credentials=/root/.smb,vers=3.0,noperm,rw
+Type=cifs
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target

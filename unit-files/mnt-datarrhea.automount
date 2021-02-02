@@ -1,0 +1,10 @@
+[Unit]
+Description=Automount for datarrhea
+ConditionPathExists=/mnt/datarrhea
+
+[Automount]
+Where=/mnt/datarrhea
+TimeoutIdleSec=10
+
+[Install]
+WantedBy=multi-user.target
