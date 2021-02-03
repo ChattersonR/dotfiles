@@ -1,5 +1,5 @@
 #Trying out fish
-if [[ ! -o login && $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]; then
+if [[ $(command -v fish) != "" && ! -o login && $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]; then
     exec fish
 fi
 
