@@ -1,3 +1,5 @@
+source {$HOME}/.alias
+
 if type -q starship
     starship init fish | source
 else
