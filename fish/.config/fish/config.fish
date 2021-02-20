@@ -1,8 +1,8 @@
 source {$HOME}/.alias
 
-if type -q starship
-    starship init fish | source
-else
+#if type -q starship
+#    starship init fish | source
+#else
 #    set normal (set_color normal)
 #    set magenta (set_color magenta)
 #    set yellow (set_color yellow)
@@ -21,6 +21,11 @@ else
     set __fish_git_prompt_color_upstream_ahead green
     set __fish_git_prompt_color_upstream_behind red
 
+    set ___fish_git_prompt_char_stashstate ⚑
+    #set ___fish_git_prompt_char_untrackedfiles ?
+    set ___fish_git_prompt_char_upstream_ahead ↑
+    set ___fish_git_prompt_char_upstream_behind ↓
+
     function fish_prompt
         set -l last_status $status
         set -l retc red
@@ -38,7 +43,7 @@ else
 
         #set_color normal
     end
-end
+#end
 
 function print_fish_colors --description 'Shows the various fish colors being used'
     set -l clr_list (set -n | grep fish | grep color | grep -v __)
