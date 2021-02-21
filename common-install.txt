@@ -1,0 +1,55 @@
+# Editors
+vim
+VSCodium
+IntelliJ
+
+# Tools/Utilities:
+git
+tmux
+pass
+neofecth
+tlp (for battery control)
+python3
+
+# Shells
+fish
+zsh
+starship
+
+# Media
+Spotify
+VLC
+spot (gtk spotify client)
+spotify-qt (QT spotify client)
+
+# Photography
+Geeqie
+darktable
+art
+raw therapee
+entangle
+
+# Chat
+Discord
+Slack
+Skype
+Zoom
+
+# Office
+libreoffice
+Dia
+
+# Touchscreen Controls
+touchegg
+touche
+
+# Gnome Plugins
+alt tab: raise first window
+Always show workspaces
+audio switcher
+caffeine
+npordvpn status
+places status indicator
+pop shell
+removable drive menu
+tray icons or topicons plus.
