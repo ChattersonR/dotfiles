@@ -12,3 +12,6 @@ alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
 alias gp='grep -rnI'
 alias gpi='grep -rnIi'
+alias paru-devel='paru -Syu --devel'
+
+alias crewlink='sudo crewlink --no-sandbox'

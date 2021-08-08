@@ -6,5 +6,6 @@ if [[ $(command -v yarn) != "" ]]; then
     export PATH=${PATH}:`yarn global bin`
 fi
 export VISUAL="vim"
+export EDITOR=$VISUAL
 #export JAVA_HOME="/usr/java/latest"
 #export GRADLE_HOME="/usr/share/java/gradle"

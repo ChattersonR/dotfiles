@@ -2,7 +2,7 @@
 	name = badgerrc@gmail.com
 	email = robertchatterson1@gmail.com
 [credential]
-	helper = cache
+	helper = !pass-git-helper $@
 [push]
 	default = simple
 [pull]
