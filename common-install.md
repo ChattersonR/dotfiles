@@ -7,9 +7,13 @@ IntelliJ
 git
 tmux
 pass
+pass-git-helper
 neofecth
 tlp (for battery control)
 python3
+s-tui
+thermald (?)
+lm-sensors
 
 # Shells
 fish
@@ -53,3 +57,8 @@ places status indicator
 pop shell
 removable drive menu
 tray icons or topicons plus.
+
+# Backup
+Borg
+Vorta
+Timeshift
