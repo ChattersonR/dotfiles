@@ -15,6 +15,23 @@ s-tui
 thermald (?)
 lm-sensors
 
+## GNU Replecements
+https://zaiste.net/posts/shell-commands-rust/
+ripgrep
+bat
+httpie
+dust
+fd
+exa
+duf
+tldr
+procs
+sd
+htop
+bpytop
+bandwhich
+
+
 # Shells
 fish
 zsh
@@ -62,3 +79,8 @@ tray icons or topicons plus.
 Borg
 Vorta
 Timeshift
+
+# Games
+Steam
+Heroic (Epic Games & GOG proton launcher)
+protonup

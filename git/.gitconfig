@@ -31,3 +31,5 @@
 	alias = config --get-regexp alias
 	sha = rev-parse HEAD
 	prstash = "!f() { git fetch $1 refs/pull-requests/$2/from:$3; }; f" # remote prNum branch
+	fixup= commit --fixup HEAD
+	autosquash= rebase -i --autosquash
