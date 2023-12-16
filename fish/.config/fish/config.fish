@@ -1,8 +1,8 @@
 source {$HOME}/.alias
 
-#if type -q starship
-#    starship init fish | source
-#else
+if type -q starship
+    starship init fish | source
+else
 #    set normal (set_color normal)
 #    set magenta (set_color magenta)
 #    set yellow (set_color yellow)
@@ -43,7 +43,7 @@ source {$HOME}/.alias
 
         #set_color normal
     end
-#end
+end
 
 function print_fish_colors --description 'Shows the various fish colors being used'
     set -l clr_list (set -n | grep fish | grep color | grep -v __)
@@ -83,3 +83,9 @@ function print_fish_git_icons --description 'Shows the various fish git icons be
         echo '|____________________________________________|_________________________________________|'
     end
 end
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#eval /opt/anaconda/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+

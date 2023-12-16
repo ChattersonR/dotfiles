@@ -1,19 +1,37 @@
 alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias i3lock='i3lock -c 000000'
-alias ls='ls -h --color=auto'
-alias la='ls -a'
-alias ll='ls -la'
+alias paru-devel='paru -Syu --devel'
+
+## find aliases
+alias fd='find . -name'
+alias fdi='find . -iname'
+
+## grep aliases
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
-alias fd='find . -name'
-alias fdi='find . -iname'
 alias gp='grep -rnI'
 alias gpi='grep -rnIi'
-alias paru-devel='paru -Syu --devel'
+
+## ls aliases
+#alias ls='ls -h --color=auto'
+#alias la='ls -a'
+#alias ll='ls -la'
+alias ls='eza'
+alias ll='eza -l'
+alias la='eza -la'
+alias lg='eza -lah --git --git-ignore'
+
+## df aliases
+#alias df='df -h'                          # human-readable sizes
+alias df=duf
+
+## du aliases 
+alias du=dust
 
 alias crewlink='sudo crewlink --no-sandbox'
+
+alias vim=nvim

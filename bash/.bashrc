@@ -89,11 +89,11 @@ if ${use_color} ; then
 #	fi
 fi
 
-if [[ $(command -v starship) != "" ]] ; then 
-	eval "$(starship init bash)"
-elif [[ -d "${HOME}/dotfiles" ]] ; then
-	source ${HOME}/dotfiles/prompt.sh
-fi
+#if [[ $(command -v starship) != "" ]] ; then 
+#	eval "$(starship init bash)"
+#elif [[ -d "${HOME}/dotfiles" ]] ; then
+#	source ${HOME}/dotfiles/prompt.sh
+#fi
 
 unset use_color safe_term match_lhs sh
 
@@ -140,3 +140,19 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
