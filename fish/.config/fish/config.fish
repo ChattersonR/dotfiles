@@ -1,5 +1,7 @@
 source {$HOME}/.alias
 
+[ -r /usr/share/nvm/init-nvm.sh ] && load_nvm > /dev/null
+
 if type -q starship
     starship init fish | source
 else

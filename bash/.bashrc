@@ -5,9 +5,9 @@
 [[ $- != *i* ]] && return
 
 # Trying out fish
-if [[ $(command -v fish) != "" && $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]; then
-	exec fish
-fi
+#if [[ $(command -v fish) != "" && $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]; then
+#	exec fish
+#fi
 
 colors() {
 	local fgc bgc vals seq0
@@ -37,6 +37,8 @@ colors() {
 }
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+
+[ -r /usr/share/nvm/init-nvm.sh ] && . /usr/share/nvm/init-nvm.sh
 
 # Change the window title of X terminals
 case ${TERM} in

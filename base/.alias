@@ -1,5 +1,5 @@
 alias cp="cp -i"                          # confirm before overwriting something
-alias free='free -m'                      # show sizes in MB
+#alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 alias i3lock='i3lock -c 000000'
