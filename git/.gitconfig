@@ -22,6 +22,7 @@
 	co = checkout
 	br = branch
 	st = status
+    fa = fetch --all
 	sf = submodule foreach
 	sp = submodule foreach 'git pull --prune || :'
 	ru = remote update -p

@@ -25,7 +25,8 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
   spec = {
     -- import your plugins
-    { import = "plugins" },
+    { import = "plugins.not-vscode", cond = (function() return not vim.g.vscode end)  },
+    { import = "plugins.always", cond = true  },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
