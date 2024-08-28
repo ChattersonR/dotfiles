@@ -4,6 +4,7 @@ source {$HOME}/.alias
 
 if type -q starship
     starship init fish | source
+    enable_transience
 else
 #    set normal (set_color normal)
 #    set magenta (set_color magenta)
