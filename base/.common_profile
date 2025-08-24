@@ -10,3 +10,4 @@ export EDITOR=$VISUAL
 export PATH=$PATH:/opt/anaconda/bin
 #export JAVA_HOME="/usr/java/latest"
 #export GRADLE_HOME="/usr/share/java/gradle"
+export RUSTICL_ENABLE=radeonsi
