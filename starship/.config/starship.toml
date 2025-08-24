@@ -1,5 +1,19 @@
+right_format = """$battery$time"""
+
 [aws]
 symbol = "  "
+
+[battery]
+
+[[battery.display]]
+threshold = 10
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+
+[time]
+disabled = false
 
 [buf]
 symbol = " "

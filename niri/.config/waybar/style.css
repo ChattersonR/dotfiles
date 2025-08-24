@@ -1,0 +1,115 @@
+@import "themes/mocha.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  font-size: 14px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+.modules-left {
+  background: @surface0;
+  /*margin: 5px 0;*/
+  margin-left: 5px;
+  border-radius: 1rem;
+}
+.modules-right {
+  background: @surface0;
+  /*margin: 5px 0;*/
+  margin-right: 5px;
+  border-radius: 1rem;
+}
+.modules-center {
+  background: @surface0;
+  /*margin: 5px 0;*/
+  border-radius: 1rem;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.4rem;
+}
+
+#workspaces button.active {
+  color: @sky;
+  border-radius: 1rem;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 1rem;
+}
+
+.module {
+  padding: 0 1rem;
+}
+
+#custom-hardware-wrap {
+}
+
+#clock {
+  color: @blue;
+}
+
+#window {
+  color: @yellow;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+
+#battery.warning:not(.charging) {
+  color: @yellow;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+}
+
+#backlight {
+  color: @rosewater;
+}
+
+#wireplumber{
+  color: @pink;
+}
+
+#network{
+  color: @peach;
+}
+
+#mpris{
+  color: @mauve;
+}
+
+#custom-session-wrap{
+    color: @lavender;
+}
+
+#custom-lock {
+  color: @teal;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#custom-reboot {
+  color: @yellow;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+#custom-power {
+  color: @red;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

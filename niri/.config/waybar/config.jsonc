@@ -1,0 +1,229 @@
+{
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 0,
+    "margin": 0,
+    "modules-left": [
+        "group/hardware",
+        "niri/workspaces",
+        "niri/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "mpris",
+//        "idle_inhibitor",
+        "wireplumber#sink",
+        "backlight",
+        "network",
+        "battery",
+        "group/session",
+        "tray"
+    ],
+    "mpris": {
+        "title-len": 10,
+        "artist-len": 10,
+        "album-len": 5,
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        }
+        // "ignored-players": ["firefox"]
+    },
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+    "niri/window": {
+    	"format": "    {title}",
+    	"rewrite": {
+    		"(.*) - Mozilla Firefox": "🌎 $1",
+    		"(.*) - zsh": "> [$1]"
+    	}
+    },
+    "custom/hardware-wrap": {
+    	  "format": "",
+    	  "tooltip-format": "Resource Usage"
+    },
+    "group/hardware": {
+        "orientation": "horizontal",
+        "drawer": {
+        	  "transition-duration": 500,
+        	  "transition-left-to-right": true
+        },
+        "modules": [
+        	  "custom/hardware-wrap",
+            "power-profiles-daemon",
+        	  "cpu",
+        	  "memory",
+        	  "temperature",
+            "disk"
+        ]
+    },
+    "custom/session-wrap": {
+        "format": "",
+    	  "tooltip-format": "Lock, Reboot, Shutdown"
+    },
+    "group/session": {
+        "orientation": "horizontal",
+        "drawer": {
+        	  "transition-duration": 500,
+        	  "transition-left-to-right": true
+        },
+        "modules": [
+        	  "custom/session-wrap",
+            "custom/lock",
+            "custom/reboot",
+            "custom/power"
+        ]
+    },
+    "custom/lock": {
+        "format": "",
+        "on-click": "swaylock -c 000000",
+        "tooltip": true,
+        "tooltip-format": "Lock screen"
+    },
+    "custom/reboot": {
+        "format": "",
+        "on-click": "systemctl reboot",
+        "tooltip": true,
+        "tooltip-format": "Reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "systemctl poweroff",
+        "tooltip": true,
+        "tooltip-format": "Power Off"
+    },
+    "clock": {
+        "format": "󰥔  {:%H:%M 󰃮  %B %d, %Y}",
+        "format-alt": "󰥔  {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#d3c6aa'><b>{}</b></span>",
+                "days": "<span color='#e67e80'>{}</span>",
+                "weeks": "<span color='#a7c080'><b>W{}</b></span>",
+                "weekdays": "<span color='#7fbbb3'><b>{}</b></span>",
+                "today": "<span color='#dbbc7f'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "cpu": {
+        "format": "󰘚 {usage}%",
+        "tooltip": true,
+        "interval": 1,
+        "on-click": "alacritty -e htop"
+    },
+    "memory": {
+        "format": "󰍛 {}%",
+        "interval": 1,
+        "on-click": "alacritty -e htop"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "󱃃",
+            "󰔏",
+            "󱃂"
+        ],
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ]
+    },
+    "network": {
+        "format-wifi": "󰖩  {essid} ({signalStrength}%)",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-linked": "󰈀  {ifname} (No IP)",
+        "format-disconnected": "󰖪  Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click-right": "ghostty -e nmtui"
+    },
+    "wireplumber#sink": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "   {volume}%",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ],
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "~/.config/waybar/fuzzel-audio-device-selector.fish",
+        "reverse-scrolling": true
+    },
+    "backlight": {
+        "format": "{icon}  {percent}%",
+        "format-icons": [
+            "󰃞",
+            "󰃟",
+            "󰃠"
+        ],
+        "reverse-scrolling": true
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰋊 {percentage_used}%",
+        "path": "/"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 5
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    }
+}
