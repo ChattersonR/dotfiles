@@ -1,8 +1,9 @@
 [Unit]
 Description=Network Manager Applet
 PartOf=graphical-session.target
-After=graphical-session.target
-Requisite=graphical-session.target
+After=graphical-session.target plasma-kwallet-pam.service gnome-keyring-daemon.service
+Wants=plasma-kwallet-pam.service gnome-keyring-daemon.service
+Requisite=graphical-session.target 
 
 [Service]
 ExecStart=/usr/bin/nm-applet
