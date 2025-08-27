@@ -1,3 +1,6 @@
 [submodule "niri/.config/quickshell/noctalia-shell"]
 	path = niri/.config/quickshell/noctalia-shell
 	url = https://github.com/noctalia-dev/noctalia-shell.git
+[submodule "niri/.config/fuzzel/catppuccin-fuzzel"]
+	path = niri/.config/fuzzel/catppuccin-fuzzel
+	url = https://github.com/catppuccin/fuzzel.git
