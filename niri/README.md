@@ -25,6 +25,8 @@ This set up is using:
 - fish (by way of scripts)
 - plasma-krunner (experiment)
 - plasma-kwallet-pam, somehow. (unlock kwallet from pam for saved wifi passwords, or something.)
+- xdg-portal-gtk
+- xdg-portal-gnome
 
 ```
 systemctl --user add-wants niri.service waybar.service
@@ -36,4 +38,13 @@ systemctl --user add-wants niri.service swayidle.service
 systemctl --user add-wants niri.service xwayland-satellite.service
 systemctl --user add-wants niri.service plasma-krunner.service
 systemctl --user add-wants niri.service plasma-kwallet-pam.service
+```
+
+# Setting themes
+Niri is primirly using gnome and gtk things. And some of the common applets (network manager and blueman)
+are in GTK.
+
+```
+gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 ```
