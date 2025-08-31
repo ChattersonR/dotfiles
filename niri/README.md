@@ -27,7 +27,7 @@ This set up is using:
 - plasma-krunner (experiment)
 - plasma-kwallet-pam, somehow. (unlock kwallet from pam for saved wifi passwords, or something.)
 - xdg-portal-gtk
-- xdg-portal-gnome
+- xdg-portal-gnome (or maybe not. seems like kde portal can work? havn't tried screencasting)
 
 ```
 systemctl --user add-wants niri.service waybar.service
@@ -72,7 +72,7 @@ default=kde;gtk;
 org.freedesktop.impl.portal.Access=gtk;
 org.freedesktop.impl.portal.Settings=gtk;
 org.freedesktop.impl.portal.Notification=gtk;
-org.freedesktop.impl.portal.Secret=gnome-keyring;
+org.freedesktop.impl.portal.Secret=kwallet;
 org.freedesktop.impl.portal.FileChooser=kde;
 ```
 - GTK settings:
