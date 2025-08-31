@@ -39,7 +39,7 @@
         // "ignored-players": ["firefox"]
     },
     "niri/workspaces": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "format-icons": {
             "active": "",
             "default": ""
@@ -63,11 +63,11 @@
         	  "transition-left-to-right": true
         },
         "modules": [
-        	  "custom/hardware-wrap",
+            "custom/hardware-wrap",
             "power-profiles-daemon",
-        	  "cpu",
-        	  "memory",
-        	  "temperature",
+            "cpu",
+            "memory",
+            "temperature",
             "disk"
         ]
     },

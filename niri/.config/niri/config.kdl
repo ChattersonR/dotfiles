@@ -270,6 +270,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 environment {
+    XDG_MENU_PREFIX "plasma-"
     XDG_CURRENT_DESKTOP "niri"
     DISPLAY ":1"
     XDG_SESSION_TYPE "wayland"
@@ -385,7 +386,7 @@ binds {
     Mod+T hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Alt+Space hotkey-overlay-title="Run an Application: krunner" { spawn "krunner"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "-f"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.

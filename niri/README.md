@@ -19,6 +19,7 @@ This set up is using:
 - swaybg
 - swayidle
 - swaylock (launched from keybind or swayidle. not a service)
+- hyprlock (nicer lock screen then swaylock)
 - blueman-applet
 - nm-applet
 - xwayland-satellite (https://github.com/YaLTeR/niri/wiki/Xwayland)
@@ -44,7 +45,42 @@ systemctl --user add-wants niri.service plasma-kwallet-pam.service
 Niri is primirly using gnome and gtk things. And some of the common applets (network manager and blueman)
 are in GTK.
 
+xdg-desktop-portals are cool and a little confusing.
+
+`/usr/share/xdg-desktop-portal/niri-portals.conf` says what desktop portals to use and which
+subset of protocols (https://flatpak.github.io/xdg-desktop-portal/docs/impl-dbus-interfaces.html).
+
+Portals go through dbus and connects dbus requests to what actions to take.
+For instance: the kde portal says "open files with dolphin", while the gnome portal says
+"open files with nautilus."
+
+Portals also expose system settings, such as "What theme hint is being used."
+Trying to use the kde portal, GTK apps weren't getting the correct theme hints.
+I *think* this is because plasma does some computation trickery in to set it, and that 
+isn't happening outside the plasma.
+
+So what does all this mean if I want to have a main setup in plasma, but switch into
+niri without installing a bunch of gnome/gtk applications?
+
+- aur: qt5ct-kde and qt6ct-kde. qt5ct and qt6ct allow setting qt themes outside 
+plasma. The `*-kde` variant is set up to locate and use kde plasma color schemes.
+  - session environment variable: `QT_QPA_PLATFORMTHEME "qt6ct"`
+- niri-portals.conf:
+``` 
+[preferred]
+default=kde;gtk;
+org.freedesktop.impl.portal.Access=gtk;
+org.freedesktop.impl.portal.Settings=gtk;
+org.freedesktop.impl.portal.Notification=gtk;
+org.freedesktop.impl.portal.Secret=gnome-keyring;
+org.freedesktop.impl.portal.FileChooser=kde;
 ```
-gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"
+- GTK settings:
+```
+gsettings set org.gnome.desktop.interface gtk-theme "Breeze-dark"
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 ```
+- If dolphin doesn't detect file type associations: 
+  - `kbuildsycoca6 --noincremental`.
+  - session environment variable: `XDG_MENU_PREFIX "plasma-"`
+Something about rebuilding menu files and mimetypes.
